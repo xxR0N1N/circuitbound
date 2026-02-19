@@ -1,85 +1,188 @@
-/* Cyberpunk Base Styles */
+/* ==============================
+   Cyberpunk Theme - CIRCUITBØUND
+   Clean & Simple Style
+============================== */
+
+/* ---------- Colors ---------- */
+:root {
+  --primary: #f59e0b;        /* Cyber yellow */
+  --accent: #ff00ff;         /* Cyber pink/purple */
+  --background: #0f0f0f;     /* Dark background */
+  --card-bg: rgba(20, 20, 20, 0.8);
+  --text-main: #ffffff;
+  --text-muted: #999999;
+  --button-hover: #ff33ff;
+}
+
+/* ---------- Base ---------- */
 body {
-  background-color: #0f0f0f;
-  color: #e5e7eb;
+  background-color: var(--background);
+  color: var(--text-main);
   font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
 }
 
-.font-display {
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Headers ---------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
   font-family: 'Cinzel', sans-serif;
+  margin: 0.5rem 0;
 }
 
-.cyber-border {
-  border: 2px solid #06b6d4;
-  border-radius: 8px;
+p {
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0.25rem 0;
 }
 
-.cyber-glitch {
-  position: relative;
-  color: #f59e0b;
-  font-family: 'Cinzel', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: glitch 1s infinite;
-}
-
-@keyframes glitch {
-  0% { text-shadow: 2px 0 #06b6d4, -2px 0 #f59e0b; }
-  20% { text-shadow: -2px 0 #06b6d4, 2px 2px #f59e0b; }
-  40% { text-shadow: 2px 2px #06b6d4, -2px -2px #f59e0b; }
-  60% { text-shadow: -2px 2px #06b6d4, 2px -2px #f59e0b; }
-  80% { text-shadow: 2px -2px #06b6d4, -2px 2px #f59e0b; }
-  100% { text-shadow: 2px 0 #06b6d4, -2px 0 #f59e0b; }
-}
-
-/* Buttons */
-button, a.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f59e0b;
-  color: black;
-  font-family: 'Cinzel', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  border: 2px solid #06b6d4;
-  transition: all 0.3s ease;
-}
-
-button:hover, a.button:hover {
-  background-color: #fbbf24;
-  transform: translateY(-2px);
-}
-
-/* Card */
-.card {
-  background-color: rgba(15,15,15,0.8);
+/* ---------- Containers ---------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
-  border-radius: 8px;
-  border: 2px solid #06b6d4;
-  transition: all 0.3s ease;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--accent);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  background-color: rgba(15,15,15,0.95);
+  background-color: rgba(20,20,20,0.95);
+  transform: translateY(-2px);
 }
 
-/* Simple tab style */
-.tabs button {
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: 2px solid #06b6d4;
-  color: #f59e0b;
-  cursor: pointer;
-  font-family: 'Cinzel', sans-serif;
-  margin-right: 0.5rem;
-}
-
-.tabs button.active {
-  background-color: #06b6d4;
+/* ---------- Buttons ---------- */
+button, .button {
+  background-color: var(--accent);
   color: black;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
+
+button:hover, .button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+/* ---------- Forms / Inputs ---------- */
+input, select, textarea {
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--accent);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--primary);
+}
+
+/* ---------- Grids ---------- */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ---------- Progress Bars ---------- */
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.progress > div {
+  height: 100%;
+  background-color: var(--accent);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* ---------- Utility Classes ---------- */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+
+.m-2 { margin: 0.5rem; }
+.m-4 { margin: 1rem; }
+.m-6 { margin: 1.5rem; }
+.m-8 { margin: 2rem; }
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+}
+
