@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel — CIRCUITBØUND</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber-yellow: '#f59e0b',
+            cyber-dark: '#0f0f0f',
+            accent: '#06b6d4',
+            foreground: '#e5e7eb'
+          },
+          fontFamily: {
+            display: ['Cinzel', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-black text-white font-serif min-h-screen">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 border-b border-gray-700">
+    <h1 class="text-4xl font-display font-black text-cyber-yellow tracking-tighter">ADMIN PROTOCOL</h1>
+    <a href="dashboard.html" class="px-4 py-2 border border-cyber-yellow text-[10px] uppercase font-bold tracking-widest hover:bg-cyber-yellow/20">Back</a>
+  </header>
+
+  <!-- Admin Controls -->
+  <main class="p-6 max-w-3xl mx-auto space-y-6">
+
+    <div class="bg-gray-900/60 p-4 cyber-border">
+      <h2 class="text-2xl font-display font-bold text-foreground mb-4">Add New Item</h2>
+      <input type="text" placeholder="Item Name" class="w-full p-2 bg-gray-800 border border-gray-700 cyber-border text-foreground mb-2">
+      <input type="text" placeholder="Type (Hardware/Cyberware/Weapon)" class="w-full p-2 bg-gray-800 border border-gray-700 cyber-border mb-2">
+      <input type="number" placeholder="Price (eb)" class="w-full p-2 bg-gray-800 border border-gray-700 cyber-border mb-2">
+      <textarea placeholder="Description" class="w-full p-2 bg-gray-800 border border-gray-700 cyber-border mb-2"></textarea>
+      <button class="w-full py-2 bg-accent text-black font-display text-xs uppercase tracking-widest font-black hover:bg-accent/90">
+        Add Item
+      </button>
+    </div>
+
+    <div class="bg-gray-900/60 p-4 cyber-border">
+      <h2 class="text-2xl font-display font-bold text-foreground mb-4">Add New Store / Vendor</h2>
+      <input type="text" placeholder="Store Name" class="w-full p-2 bg-gray-800 border border-gray-700 cyber-border mb-2">
+      <button class="w-full py-2 bg-accent text-black font-display text-xs uppercase tracking-widest font-black hover:bg-accent/90">
+        Add Store
+      </button>
+    </div>
+
+  </main>
+
+</body>
+</html>
